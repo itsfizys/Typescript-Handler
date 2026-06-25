@@ -16,11 +16,11 @@ const commonConfig = {
                 warn: [255, 190, 120] as [number, number, number],
         },
         links: {
-                supportServer: 'https://discord.gg/Ez4gCJQDxB',
+                supportServer: 'https://discord.gg/aerox',
                 invite: 'https://discord.com/oauth2/authorize?client_id=1277525844319014955&permissions=4820258979704064&integration_type=0&scope=bot+applications.commands',
         },
-        watermark: 'coded by dunno',
-        version: '2.0.0',
+        watermark: 'coded by itsfizys',
+        version: '1.1.0',
 };
 
 export const config: AppConfig = {
