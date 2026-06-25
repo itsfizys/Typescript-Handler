@@ -17,7 +17,6 @@ import {
 import { config } from '#config';
 import { emoji } from '#emoji';
 import { disableComponents, logger } from '#utils';
-import type { ExecuteContext } from '#command';
 import type { Bot } from '#classes/client';
 import type { Command as CommandType } from '#classes/command';
 import type { CommandContext } from '#classes/context';
@@ -50,7 +49,7 @@ class HelpCommand extends Command {
                 });
         }
 
-        override async execute({ ctx }: ExecuteContext): Promise<void> {
+        async execute({ ctx }) {
                 const arg = ctx.isSlash
                         ? ctx.options?.getString('command')
                         : ctx.args.join(' ').trim();

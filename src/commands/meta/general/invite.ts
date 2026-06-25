@@ -11,7 +11,6 @@ import {
 } from 'discord.js';
 import { emoji } from '#emoji';
 import { config } from '#config';
-import type { ExecuteContext } from '#command';
 
 class InviteCommand extends Command {
         constructor() {
@@ -30,7 +29,7 @@ class InviteCommand extends Command {
                 });
         }
 
-        override async execute({ ctx }: ExecuteContext): Promise<void> {
+        async execute({ ctx }) {
                 const name = ctx.client.user?.username ?? 'Bot';
 
                 const container = new ContainerBuilder()

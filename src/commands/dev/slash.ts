@@ -4,7 +4,6 @@ import { config } from '#config';
 import { Command } from '#command';
 import { logger } from '#utils';
 import { emoji } from '#emoji';
-import type { ExecuteContext } from '#command';
 
 class UpdateSlashCommand extends Command {
         constructor() {
@@ -21,7 +20,7 @@ class UpdateSlashCommand extends Command {
                 });
         }
 
-        override async execute({ ctx }: ExecuteContext): Promise<void> {
+        async execute({ ctx }) {
                 const msg = await ctx.reply(
                         `${emoji.info} **Scanning Commands**\nChecking for slash-enabled commands...`,
                 );

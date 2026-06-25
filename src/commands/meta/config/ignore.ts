@@ -20,7 +20,6 @@ import { db } from '#dbManager';
 import { emoji } from '#emoji';
 import { config } from '#config';
 import { disableComponents, logger } from '#utils';
-import type { ExecuteContext } from '#command';
 import type { CommandContext } from '#classes/context';
 
 const { colors } = config;
@@ -46,7 +45,7 @@ class IgnoreCommand extends Command {
                 });
         }
 
-        override async execute({ ctx }: ExecuteContext): Promise<void> {
+        async execute({ ctx }) {
                 if (!ctx.guild) {
                         await ctx.reply('This command is only available in servers');
                         return;

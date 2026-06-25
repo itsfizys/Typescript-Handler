@@ -2,7 +2,6 @@ import { Command } from '#command';
 import { logger } from '#utils';
 import { emoji } from '#emoji';
 import { db } from '#dbManager';
-import type { ExecuteContext } from '#command';
 import type { CommandContext } from '#classes/context';
 
 class BlacklistCommand extends Command {
@@ -26,7 +25,7 @@ class BlacklistCommand extends Command {
                 });
         }
 
-        override async execute({ ctx }: ExecuteContext): Promise<void> {
+        async execute({ ctx }) {
                 const action = ctx.args[0]?.toLowerCase();
 
                 if (!action) {

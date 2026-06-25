@@ -1,6 +1,5 @@
 import { Command } from '#command';
 import { ContainerBuilder, TextDisplayBuilder, MessageFlags } from 'discord.js';
-import type { ExecuteContext } from '#command';
 
 const ESC = '\u001b';
 const BOLD_MAGENTA = `${ESC}[1;35m`;
@@ -21,7 +20,7 @@ class PingCommand extends Command {
                 });
         }
 
-        override async execute({ ctx }: ExecuteContext): Promise<void> {
+        async execute({ ctx }) {
                 const redisPing = await ctx.client.c.ping();
                 const wsPing = Math.round(ctx.client.ws.ping);
                 const avg = Math.round((wsPing + redisPing) / 2);

@@ -23,7 +23,6 @@ import { db } from '#dbManager';
 import { config } from '#config';
 import { emoji } from '#emoji';
 import { disableComponents } from '#utils';
-import type { ExecuteContext } from '#command';
 
 const { colors } = config;
 
@@ -51,7 +50,7 @@ class SetProfileCommand extends Command {
                 });
         }
 
-        override async execute({ ctx }: ExecuteContext): Promise<void> {
+        async execute({ ctx }) {
                 if (!ctx.guild) {
                         const container = new ContainerBuilder();
                         container.setAccentColor(colors.error);

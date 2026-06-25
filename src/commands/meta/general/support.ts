@@ -11,7 +11,6 @@ import {
 } from 'discord.js';
 import { emoji } from '#emoji';
 import { config } from '#config';
-import type { ExecuteContext } from '#command';
 
 class SupportCommand extends Command {
         constructor() {
@@ -28,7 +27,7 @@ class SupportCommand extends Command {
                 });
         }
 
-        override async execute({ ctx }: ExecuteContext): Promise<void> {
+        async execute({ ctx }) {
                 await ctx.reply({
                         components: [this._view()],
                         flags: MessageFlags.IsComponentsV2,

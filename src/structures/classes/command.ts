@@ -6,7 +6,7 @@ export interface ExecuteContext {
         ctx: CommandContext;
 }
 
-export class Command {
+export abstract class Command {
         name: string | string[];
         description: string;
         usage: string | string[];
@@ -43,9 +43,7 @@ export class Command {
                 this.sameVoiceChannel = options.sameVoiceChannel ?? false;
         }
 
-        async execute(_ctx: ExecuteContext): Promise<unknown> {
-                throw new Error(`Command "${String(this.name)}" does not implement an execute method.`);
-        }
+        abstract execute(ctx: ExecuteContext): Promise<unknown>;
 
         async autocomplete(_context: { interaction: unknown; client: unknown }): Promise<void> {}
 }
