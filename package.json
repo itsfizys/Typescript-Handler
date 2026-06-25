@@ -1,0 +1,62 @@
+{
+  "name": "discord-bot-handler",
+  "version": "1.1.0",
+  "description": "A versatile Discord.js bot handler",
+  "type": "module",
+  "scripts": {
+    "start": "npx tsx src/bot.ts",
+    "dev": "npx tsx --watch src/bot.ts",
+    "generate": "npx drizzle-kit generate",
+    "push": "npx drizzle-kit push",
+    "studio": "npx drizzle-kit studio",
+    "check": "npx drizzle-kit check",
+    "introspect": "npx drizzle-kit introspect",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "migrate": "npx drizzle-kit push",
+    "rebuild": "npx drizzle-kit generate && npx drizzle-kit push",
+    "typecheck": "tsc --noEmit"
+  },
+  "imports": {
+    "#commands/*": "./src/commands/*.ts",
+    "#command": "./src/structures/classes/command.ts",
+    "#context": "./src/structures/classes/context.ts",
+    "#config": "./src/config/config.ts",
+    "#emoji": "./src/config/emoji.ts",
+    "#dbManager": "./src/database/manager.ts",
+    "#structures/*": "./src/structures/*.ts",
+    "#database/*": "./src/database/*.ts",
+    "#config/*": "./src/config/*.ts",
+    "#utils": "./src/utils/index.ts",
+    "#events/*": "./src/events/*.ts",
+    "#handlers/*": "./src/structures/handlers/*.ts",
+    "#classes/*": "./src/structures/classes/*.ts",
+    "#db/*": "./src/database/*.ts",
+    "#dbRepo/*": "./src/database/repositories/*.ts",
+    "#dbSchema/*": "./src/database/schema/*.ts",
+    "#dbServices/*": "./src/database/services/*.ts",
+    "#src/*": "./src/*.ts"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "discord.js",
+    "sharding",
+    "modular"
+  ],
+  "author": "itsfizys",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.25.1",
+    "dotenv": "^17.4.2",
+    "drizzle-kit": "^0.31.9",
+    "drizzle-orm": "^0.45.1",
+    "ioredis": "^5.9.2",
+    "postgres": "^3.4.8",
+    "prettier": "^3.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  }
+}
